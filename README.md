@@ -13,8 +13,8 @@ Business plugins register their check through JMX, **with no Maven dependency** 
 
 ## Installation
 
-1. Build the JAR: `mvn package` produces `target/fitnesse-health.jar`.
-2. Copy `fitnesse-health.jar` into the FitNesse `plugins/` directory. The plugin is discovered automatically (`ServiceLoader`) and the `health-live` and `health-ready` responders are registered.
+1. Build the JAR: `mvn package` produces `target/fitnesse-health-<version>.jar` (or download it from Maven Central).
+2. Copy `fitnesse-health-<version>.jar` into the FitNesse `plugins/` directory. The plugin is discovered automatically (`ServiceLoader`) and the `health-live` and `health-ready` responders are registered.
 3. Optional: to get the `/health/live` and `/health/ready` URLs, add to `plugins.properties`:
 
    ```properties
