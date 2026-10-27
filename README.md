@@ -3,7 +3,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.tortaje/fitnesse-health.svg)](https://central.sonatype.com/artifact/io.github.tortaje/fitnesse-health)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Source: <https://github.com/tortaje/FitnesseHealth>
 
 FitNesse plugin (Java 17, FitNesse 20260313) that exposes two JSON health endpoints for Kubernetes:
 
