@@ -217,13 +217,14 @@ Recommendation: start FitNesse with `-XX:+ExitOnOutOfMemoryError`, so the contai
 
 ## Release
 
-The `release` profile attaches the sources and javadoc JARs, signs the artifacts with GPG and uploads them to Maven Central:
+Releases use the Maven Release Plugin. `release:prepare` sets the release version, tags it `v<version>`, sets the next development version and pushes; `release:perform` builds the tag with the `release` profile (sources and javadoc JARs, GPG signature) and uploads it to Maven Central:
 
 ```bash
-mvn -Prelease clean deploy
+mvn -B release:prepare -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.0.1-SNAPSHOT
+mvn release:perform
 ```
 
-Prerequisites: a non-`SNAPSHOT` version, a GPG key available to `gpg`, and a Central Portal user token declared in `~/.m2/settings.xml` under the server id `central`. The upload stops once the deployment is validated; publish it from <https://central.sonatype.com>.
+Prerequisites: push access to the GitHub repository, a GPG key available to `gpg` (with a pinentry able to prompt for the passphrase), and a Central Portal user token declared in `~/.m2/settings.xml` under the server id `central`. The upload stops once the deployment is validated; publish it from <https://central.sonatype.com>.
 
 ## License
 

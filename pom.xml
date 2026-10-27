@@ -24,7 +24,8 @@
   <scm>
     <url>https://github.com/tortaje/FitnesseHealth</url>
     <connection>scm:git:https://github.com/tortaje/FitnesseHealth.git</connection>
-    <developerConnection>scm:git:git@github.com:tortaje/FitnesseHealth.git</developerConnection>
+    <developerConnection>scm:git:https://github.com/tortaje/FitnesseHealth.git</developerConnection>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
@@ -56,6 +57,16 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <tagNameFormat>v@{project.version}</tagNameFormat>
+          <releaseProfiles>release</releaseProfiles>
+          <goals>deploy</goals>
+        </configuration>
       </plugin>
     </plugins>
   </build>
