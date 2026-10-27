@@ -3,3 +3,4 @@ target/
 *.iml
 /docs
 .superpowers
+.DS_Store
